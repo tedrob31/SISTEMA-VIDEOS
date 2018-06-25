@@ -20,7 +20,7 @@ namespace SISTEMA_VIDEOS
         private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmClientes prod = new frmClientes();
-            //prod.MdiParent = this;
+            prod.MdiParent = this;
             prod.Show();
         }
 
@@ -41,6 +41,17 @@ namespace SISTEMA_VIDEOS
         {
             frmDirectores direc = new frmDirectores();
             direc.Show();
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+            
         }
     }
 }
