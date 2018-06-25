@@ -32,6 +32,14 @@ namespace CapaCodigo
             return dt;
 
         }
+        public DataTable GenerarCodigoCliente()
+        {
+            SqlDataAdapter da = new SqlDataAdapter("GENERAR_CODIGO_CLIENTE", Conectar());
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+
+        }
 
 
 
