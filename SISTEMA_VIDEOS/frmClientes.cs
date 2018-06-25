@@ -40,12 +40,24 @@ namespace SISTEMA_VIDEOS
                 oClidao.InsertarClientes(oCLi);
                 MessageBox.Show("Cliente ingresado con exito :>");
                 inicio();
+                llenarDatagrid();
             }
+        }
+
+        void llenarDatagrid()
+        {
+            dataGridView1.DataSource = oClidao.llenarClientes();
         }
 
         private void frmClientes_Load(object sender, EventArgs e)
         {
-             dataGridView1.DataSource= oClidao.llenarClientes();
+            mostrarCodigo();
+            llenarDatagrid(); 
+        }
+        private void mostrarCodigo()
+        {
+            DataTable dt = oClidao.GenerarCodigoCliente();
+            textBox5.Text = dt.Rows[0][0].ToString();
         }
     }
 }
