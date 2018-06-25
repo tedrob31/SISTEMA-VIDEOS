@@ -13,7 +13,7 @@ namespace CapaCodigo
         clsclientes oCli = new clsclientes();
 
         public void InsertarClientes(clsclientes cli)
-        {
+        { 
             SqlCommand cmd = new SqlCommand("SP_INSERTAR_CLIENTES", Conectar());
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@NOMBRE", cli.nombres);
@@ -23,20 +23,15 @@ namespace CapaCodigo
             cmd.ExecuteNonQuery();
 
         }
-        
-        //public DataTable llenarClientes()
-        //{
-        //    try
-        //    {
-        //        SqlCommand llenar = new SqlCommand("select * from clientes", Conectar());
-        //        llenar.CommandType= CommandType.StoredProcedure;
 
-        //    }
-        //    catch
-        //    {
-        //        return llenar;
-        //    }
-        //}
+        public DataTable llenarClientes()
+        {
+            SqlDataAdapter da = new SqlDataAdapter("select * from CLIENTES", Conectar());
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+
+        }
 
 
 

@@ -45,7 +45,7 @@ namespace SISTEMA_VIDEOS
 
         private void frmClientes_Load(object sender, EventArgs e)
         {
-
+             dataGridView1.DataSource= oClidao.llenarClientes();
         }
     }
 }
