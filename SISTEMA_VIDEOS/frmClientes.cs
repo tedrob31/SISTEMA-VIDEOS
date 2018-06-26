@@ -27,7 +27,7 @@ namespace SISTEMA_VIDEOS
             textBox2.Clear();
             textBox3.Clear();
             textBox4.Clear();
-
+            mostrarCodigo();
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -41,6 +41,7 @@ namespace SISTEMA_VIDEOS
                 MessageBox.Show("Cliente ingresado con exito :>");
                 inicio();
                 llenarDatagrid();
+                
             }
         }
 
@@ -65,6 +66,7 @@ namespace SISTEMA_VIDEOS
             oClidao.EliminarCliente(Convert.ToInt32( textBox5.Text));
             inicio();
             llenarDatagrid();
+            
                 
         }
 
@@ -79,7 +81,14 @@ namespace SISTEMA_VIDEOS
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            oCLi.codclient =Convert.ToInt32( textBox5.Text);
+            oCLi.nombres = textBox1.Text;
+            oCLi.direccion = textBox2.Text;
+            oCLi.telefono = textBox3.Text;
+            oCLi.dni = textBox4.Text;
+            oClidao.ActualizarClientes(oCLi);
+            inicio();
+            llenarDatagrid();
         }
     }
 }

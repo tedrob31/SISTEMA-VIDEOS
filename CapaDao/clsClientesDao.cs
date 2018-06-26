@@ -52,7 +52,7 @@ namespace CapaCodigo
 
         public void ActualizarClientes(clsclientes cli)
         {
-            SqlCommand cmd = new SqlCommand("SP_INSERTAR_CLIENTES", Conectar());
+            SqlCommand cmd = new SqlCommand("SP_ACTUALIZAR_CLIENTES", Conectar());
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@ID", cli.codclient);
             cmd.Parameters.AddWithValue("@NOMBRE", cli.nombres);
