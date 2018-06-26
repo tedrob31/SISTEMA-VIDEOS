@@ -59,5 +59,27 @@ namespace SISTEMA_VIDEOS
             DataTable dt = oClidao.GenerarCodigoCliente();
             textBox5.Text = dt.Rows[0][0].ToString();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            oClidao.EliminarCliente(Convert.ToInt32( textBox5.Text));
+            inicio();
+            llenarDatagrid();
+                
+        }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+           textBox5.Text= dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            textBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            textBox3.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            textBox4.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
